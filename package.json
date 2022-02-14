@@ -15,5 +15,12 @@
   "bugs": {
     "url": "https://github.com/polinagorbunova/pet-project/issues"
   },
-  "homepage": "https://github.com/polinagorbunova/pet-project#readme"
+  "homepage": "https://github.com/polinagorbunova/pet-project#readme",
+  "devDependencies": {
+    "gulp": "4.0.2",
+    "gulp-nunjucks": "5.1.0"
+  },
+  "dependencies": {
+    "nunjucks": "3.2.3"
+  }
 }
