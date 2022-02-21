@@ -1,6 +1,14 @@
-function defaultTask(cb) {
-    // place code for your default task here
-    cb();
+const gulp = require('gulp');
+const nunjucks = require('gulp-nunjucks');
+
+function njk(){
+    return gulp.src('src/**/*.html')
+        .pipe(nunjucks.compile())
+        .pipe(gulp.dest('dist'));
 }
 
-exports.default = defaultTask
+function watch(){
+    gulp.watch('src/**/*.html', njk);
+}
+
+exports.default = gulp.series(njk, watch);

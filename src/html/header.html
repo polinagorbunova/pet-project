@@ -1,0 +1,17 @@
+<div>
+    <div>coursenta</div>
+    <div>
+        {% if isLogin %}
+        <div>
+            <div><svg></svg></div>
+            <span>{{ userName }}</span>
+        </div>
+        {% endif %}
+
+        <button>{% if isLogin %}
+            Log out
+            {% else %}
+            Login
+            {% endif %}</button>
+    </div>
+</div>
