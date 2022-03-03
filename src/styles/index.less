@@ -1,0 +1,67 @@
+@import 'header.less';
+@import 'auth-page.less';
+
+body {
+    margin: 0;
+    font-family: Roboto, serif;
+    background-color: #f6f7f8;
+}
+
+button {
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+}
+
+input {
+    width: 100%;
+    display: block;
+    border: 1px solid #eaecee;
+    border-radius: 3px;
+    height: 48px;
+    box-sizing: border-box;
+}
+
+.button {
+    color: #336fee;
+    cursor: pointer;
+
+    &__wrapper {
+        display: flex;
+    }
+
+    &__icon {
+        margin-right: 8px;
+    }
+
+    &[data-appearance='normal'] {
+        padding: 12px 32px;
+        background-color: rgba(66, 139, 249, 0.12);
+        border-radius: 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .header,
+    main {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
+@media (min-width: 769px) {
+    .header,
+    main {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+
+@media (min-width: 1024px) {
+    .header,
+    main {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+}

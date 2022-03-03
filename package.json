@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "gulp",
+    "prettier": "npx prettier --write .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -19,7 +20,9 @@
   "homepage": "https://github.com/polinagorbunova/pet-project#readme",
   "devDependencies": {
     "gulp": "4.0.2",
-    "gulp-nunjucks": "5.1.0"
+    "gulp-less": "5.0.0",
+    "gulp-nunjucks": "5.1.0",
+    "prettier": "2.5.1"
   },
   "dependencies": {
     "nunjucks": "3.2.3"

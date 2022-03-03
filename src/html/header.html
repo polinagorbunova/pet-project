@@ -1,17 +1,19 @@
-<div>
-    <div>coursenta</div>
-    <div>
+{% from "html/icon-button.html" import buttonIcon %} {% set isLogin = false %}
+{% set userName = 'Nikolay Ivanov' %}
+
+<div class="header">
+    <div class="header__logo">{% include "html/svg/logo.html" %}</div>
+
+    <div class="header__auth">
         {% if isLogin %}
-        <div>
-            <div><svg></svg></div>
-            <span>{{ userName }}</span>
+        <div class="header__user">
+            {% include "html/svg/user-icon.html" %}
+            <span class="header__user__name">{{ userName }}</span>
         </div>
         {% endif %}
-
-        <button>{% if isLogin %}
-            Log out
-            {% else %}
-            Login
-            {% endif %}</button>
+        <div class="header__auth__button">
+            {{ buttonIcon('Log out' if isLogin else 'Login', 'button',
+            "html/svg/logout-icon.html" if isLogin, 'link')}}
+        </div>
     </div>
 </div>

@@ -1,14 +1,21 @@
-const gulp = require('gulp');
-const nunjucks = require('gulp-nunjucks');
+const gulp = require('gulp')
+const nunjucks = require('gulp-nunjucks')
+const less = require('gulp-less')
 
-function njk(){
-    return gulp.src('src/**/*.html')
+function html() {
+    return gulp
+        .src('src/**/*.html')
         .pipe(nunjucks.compile())
-        .pipe(gulp.dest('dist'));
+        .pipe(gulp.dest('dist'))
 }
 
-function watch(){
-    gulp.watch('src/**/*.html', njk);
+function css() {
+    return gulp.src('src/**/*.less').pipe(less()).pipe(gulp.dest('dist'))
 }
 
-exports.default = gulp.series(njk, watch);
+function watch() {
+    gulp.watch('src/**/*.html', html)
+    gulp.watch('src/**/*.less', css)
+}
+
+exports.default = gulp.series(gulp.parallel(html, css), watch)

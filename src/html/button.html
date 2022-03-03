@@ -1,0 +1,7 @@
+{% macro button(label, type = 'button', appearance='normal') %}
+
+<button type="{{ type }}" class="button" data-appearance="{{appearance}}">
+    {{label}}
+</button>
+
+{% endmacro %}

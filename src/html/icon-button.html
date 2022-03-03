@@ -1,0 +1,8 @@
+{% from "html/button.html" import button %} {% macro buttonIcon(label, type =
+'button', icon = null, appearance = 'normal') %}
+<div class="button__wrapper">
+    <div class="button__icon">{% if icon %} {% include icon %} {% endif %}</div>
+
+    {{ button(label, type, appearance)}}
+</div>
+{% endmacro %}
