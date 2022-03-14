@@ -1,0 +1,30 @@
+{% from "html/badge.html" import badge %}
+{% from "html/button.html" import button %}
+
+{% macro courseCard(info)%}
+
+<div class="card">
+    <div class="course">
+        <span class="course__date">{{ info.date }}</span>
+        <div class="course__header">
+            <h2 class="course__name">{{ info.name }}</h2>
+            <div class="course__duration">{{ badge(info.duration)}}</div>
+            {% if info.isFavourite %}
+            <div class="course__favourite">
+                {% include "html/svg/star.html" %}
+            </div>
+            {% endif %}
+        </div>
+        <div class="course__description">{{info.description}}</div>
+    </div>
+    <div class="buttons">
+        <div class="buttons__edit">
+            {{ button('Edit', size = 's', icon = "html/svg/pencil.html")}}
+        </div>
+        <div class="buttons__delete">
+            {{ button('Delete', appearance = 'error', size = 's', icon = "html/svg/trash.html")}}
+        </div>
+    </div>
+</div>
+
+{% endmacro %}

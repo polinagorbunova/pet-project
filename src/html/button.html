@@ -1,7 +1,10 @@
-{% macro button(label, type = 'button', appearance='normal') %}
+{% macro button(label, type = 'button', appearance='normal', size = 'm', icon = null) %}
 
-<button type="{{ type }}" class="button" data-appearance="{{appearance}}">
-    {{label}}
+<button type="{{ type }}" class="button" data-appearance="{{appearance}}" data-size="{{size}}">
+    <span class="button__content">
+        {% if icon %}<span class="button__icon">{% include icon %} </span>{%
+        endif %} {{label}}
+    </span>
 </button>
 
 {% endmacro %}

@@ -1,0 +1,39 @@
+{% from "html/button.html" import button %}
+{% from "html/course-card.html"import courseCard %}
+{% set courses = [{date: '02.01.20', name: 'Video Course
+1', duration: '1 h 28 min', isFavourite: true, description: 'Create a repository
+at github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to
+create initial a project Run the project by executing “ng serve” Explore a
+project structure Setup TS lint according to your preferences (indentation,
+spacing...)' }, {date: '23.01.20', name: 'Super long title of difficult video
+course about programming and frontenddddd', duration: '1 h 56 min', isFavourite:
+false, description: 'Create a repository at github/bitbucket Install ng-cli: npm
+install -g @angular/cli Use ng-cli to create initial a project Run the project
+by executing “ng serve” Explore a project structure Setup TS lint according to
+your preferences (indentation, spacing...) Create a repository at
+github/bitbucket Install ng-cli: npm install -g @angular/cli Use ng-cli to
+create initial a project Run the project by executing “ng serve” Explore a
+project structure Setup TS lint according to your preferences (indentation,
+spacing...)' }] %}
+
+<section class="filters">
+    <div class="filters__search">
+        <input
+            type="text"
+            placeholder="Name, fragment or date"
+            class="search"
+        />
+        <div>{{ button('Search')}}</div>
+    </div>
+
+    <div class="add-button">
+        {{ button('Add course', icon = "html/svg/logout-icon.html")}}
+    </div>
+</section>
+<section class="list">
+    <div class="list__items">
+        {% for course in courses%}
+        <div class="list__item">{{ courseCard(course) }}</div>
+        {% endfor %}
+    </div>
+</section>

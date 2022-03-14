@@ -1,4 +1,5 @@
-{% from "html/icon-button.html" import buttonIcon %} {% set isLogin = false %}
+{% from "html/button.html" import button %}
+{% set isLogin = true %}
 {% set userName = 'Nikolay Ivanov' %}
 
 <div class="header">
@@ -12,8 +13,8 @@
         </div>
         {% endif %}
         <div class="header__auth__button">
-            {{ buttonIcon('Log out' if isLogin else 'Login', 'button',
-            "html/svg/logout-icon.html" if isLogin, 'link')}}
+            {{ button('Log out' if isLogin else 'Login', appearance = 'link', size = 's',
+            icon = "html/svg/logout-icon.html" if isLogin)}}
         </div>
     </div>
 </div>

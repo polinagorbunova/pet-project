@@ -1,0 +1,36 @@
+.filters {
+    display: flex;
+    justify-content: space-between;
+    padding: 32px 0;
+
+    &__search {
+        display: flex;
+        max-width: 586px;
+        flex-grow: 1;
+        align-items: center;
+    }
+}
+
+.list {
+    &::before {
+        content: '';
+        border-bottom: 1px solid var(--base-02);
+        width: 100vw;
+        position: absolute;
+        left: 0;
+    }
+
+    &__items {
+        padding-top: 38px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 24px;
+        }
+    }
+}
+
+.search {
+    margin-right: 16px;
+}

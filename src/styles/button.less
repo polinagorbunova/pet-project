@@ -1,0 +1,42 @@
+@import 'common/typography.less';
+
+.button {
+    .text-m_bold();
+    color: var(--link);
+    cursor: pointer;
+    border-radius: 40px;
+    white-space: nowrap;
+    width: 100%;
+    font-family: inherit;
+
+    &__content {
+        vertical-align: middle;
+    }
+
+    &__icon {
+        vertical-align: middle;
+        margin-right: 8px;
+    }
+
+    &[data-appearance='normal'] {
+        background-color: var(--accent);
+    }
+
+    &[data-appearance='error'] {
+        color: var(--error);
+        background-color: var(--error-bg);
+    }
+
+    &[data-size='s'] {
+        .text-s_bold();
+        padding: 8px 32px;
+    }
+
+    &[data-size='m'] {
+        padding: 12px 32px;
+    }
+
+    &[data-size='l'] {
+        padding: 24px 32px;
+    }
+}
