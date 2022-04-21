@@ -16,7 +16,7 @@ create initial a project Run the project by executing “ng serve” Explore a
 project structure Setup TS lint according to your preferences (indentation,
 spacing...)' }] %}
 
-<section class="filters">
+<div class="filters">
     <div class="filters__search">
         <input
             type="text"
@@ -29,11 +29,11 @@ spacing...)' }] %}
     <div class="add-button">
         {{ button('Add course', icon = "html/svg/logout-icon.html")}}
     </div>
-</section>
-<section class="list">
+</div>
+<div class="list">
     <div class="list__items">
         {% for course in courses%}
         <div class="list__item">{{ courseCard(course) }}</div>
         {% endfor %}
     </div>
-</section>
+</div>
